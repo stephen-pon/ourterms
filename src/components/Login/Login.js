@@ -24,7 +24,8 @@ class Login extends PureComponent {
   render() {
 
     const {
-      classes
+      classes,
+      dashNav
     } = this.props;
 
     return (
@@ -38,9 +39,9 @@ class Login extends PureComponent {
                 <label>Username</label><br></br>
                 <input id='username'></input><br></br>
                 <label>Password</label><br></br>
-                <input id='password'></input><p></p>
+                <input type='password' id='password'></input><p></p>
                 <input type='checkbox'></input><label>Remember me</label><br></br>
-                <input type='submit' name="" value="Login"></input>
+                <input type='button' onClick={dashNav} name="" value="Login"></input>
               </form>
             </div>
           </div>
@@ -50,6 +51,8 @@ class Login extends PureComponent {
   }
 }
 
-Login.propTypes = {};
+Login.propTypes = {
+  dashNav: PropTypes.func
+};
 
 export default withStyles(styles)(Login);

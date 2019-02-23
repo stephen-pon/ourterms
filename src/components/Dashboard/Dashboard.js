@@ -9,6 +9,9 @@ const styles = (theme) => ({
     display: 'inline-block',
     margin: 20,
     border: 'thin gold solid'
+  },
+  cardBody: {
+
   }
 });
 
@@ -24,10 +27,12 @@ class Dashboard extends PureComponent {
       <div>
         <h1>This is the dashboard page that comes after login</h1>
         <div className={classes.card}>
-          <img class="card-img-top" src="http://fillmurray.com/150/150" alt="Card image cap"></img>
-          <div class="card-body">Address</div>
-          <div class="card-body">Tenant Name</div>
-          <div class="card-body">Caption goes here</div>
+          <div className={classes.cardBody}>Address</div>
+          <div className={classes.cardBody}>Tenant Name</div>
+          <div className={classes.cardBody}>Caption goes here</div>
+        </div>
+        <div className={classes.card}>
+          <div className={classes.cardBody}>Create New Lease</div>
         </div>
       </div>
     );

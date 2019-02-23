@@ -9,6 +9,11 @@ const styles = theme => ({
 });
 
 class Home extends PureComponent {
+
+  componentDidMount() {
+    this.props.login();
+  }
+
   render() {
     const {
       classes
@@ -23,6 +28,8 @@ class Home extends PureComponent {
   }
 }
 
-Home.propTypes = {};
+Home.propTypes = {
+  login: PropTypes.func
+};
 
 export default withStyles(styles)(Home);

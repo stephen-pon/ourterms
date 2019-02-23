@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import Home from './Home';
+import { login } from '../../actions';
 
 
 const mapStateToProps = state => {
@@ -10,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
+  login: () => login()
 }, dispatch);
 
 const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home);

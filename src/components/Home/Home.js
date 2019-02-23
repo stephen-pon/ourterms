@@ -68,6 +68,11 @@ const styles = theme => ({
 
 
 class Home extends PureComponent {
+
+  componentDidMount() {
+    this.props.login();
+  }
+
   render() {
     const {
       classes,

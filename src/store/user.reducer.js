@@ -1,15 +1,11 @@
 import { updateObject } from "../utils";
 import { userConstants } from "../constants";
-import _ from "lodash";
+
 
 const initialState = {
   current_user: undefined,
   logged_in: false
 };
-
-/////////////////////
-// Central Reducer //
-/////////////////////
 
 export const userReducer = (currentState = initialState, action) => {
   let update = {};

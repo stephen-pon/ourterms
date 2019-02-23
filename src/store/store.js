@@ -4,7 +4,8 @@ import createHistory from "history/createBrowserHistory";
 import createSagaMiddleware from 'redux-saga'
 
 import { rootSaga } from '../sagas';
-import { userReducer } from "./user.reducer";
+import { userReducer } from './user.reducer';
+import { leaseReducer } from './lease.reducer';
 
 export const history = createHistory();
 export const sagaMiddleware = createSagaMiddleware();
@@ -31,7 +32,8 @@ const composedEnhancers = compose(
 const appStore = combineReducers({
   router: connectRouter(history),
   // Individual reducers go here
-  user: userReducer
+  user: userReducer,
+  lease: leaseReducer
 });
 
 const store = createStore(appStore, composedEnhancers);

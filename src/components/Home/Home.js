@@ -70,7 +70,6 @@ const styles = theme => ({
 class Home extends PureComponent {
 
 
-
   render() {
     const {
       classes,

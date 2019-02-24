@@ -11,6 +11,10 @@ const styles = (theme) => ({
   drawerPaper: {
     width: 300
   },
+  drawer: {
+    width: 300,
+    flexShrink: 0,
+  },
   content: {
     height: '100%',
     width: '100%',
@@ -46,10 +50,12 @@ class Sidebar extends PureComponent {
 
     return (
       <Drawer
+        className={classes.drawer}
         classes={{
           paper: classes.drawerPaper,
         }}
         variant='permanent'
+        anchor='left'
         open
       >
         <div className={classes.header}>

@@ -11,6 +11,7 @@ import LeaseAmendContainer from './LeaseActions/LeaseAmend/LeaseAmendContainer';
 import LeaseTerminateContainer from './LeaseActions/LeaseTerminate/LeaseTerminateContainer';
 import LeaseAccessContainer from './LeaseActions/LeaseAccess/LeaseAccessContainer';
 import LeaseRepairContainer from './LeaseActions/LeaseRepair/LeaseRepairContainer';
+import LeaseBreachContainer from './LeaseActions/LeaseBreach/LeaseBreachContainer';
 
 
 const styles = (theme) => ({
@@ -29,6 +30,7 @@ class Lease extends PureComponent {
         <Route path='/lease/:leaseId/terminate' component={LeaseTerminateContainer} />
         <Route path='/lease/:leaseId/access' component={LeaseAccessContainer} />
         <Route path='/lease/:leaseId/repair' component={LeaseRepairContainer} />
+        <Route path='/lease/:leaseId/breach' component={LeaseBreachContainer} />
         <Route path='/lease/:leaseId' component={LeaseDetailContainer} />
         <Redirect exact={true} from="/lease" to="/lease/create" />
       </Switch>

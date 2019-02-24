@@ -40,57 +40,57 @@ class LeaseCreate extends PureComponent {
 
   editAddress(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editAddress(val);
   }
 
   editCity(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editCity(val);
   }
 
   editState(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editState(val);
   }
 
   editZip(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editZip(val);
   }
 
   editTermStart(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editTermStart(val);
   }
 
   editTermEnd(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editTermEnd(val);
   }
 
   editRent(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editRent(val);
   }
 
   editDeposit(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editDeposit(val);
   }
 
   editMethod(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editMethod(val);
   }
 
   editPaymentMethod(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editPaymentMethod(val);
   }
 
   editPaymentAddress(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editPaymentAddress(val);
   }
 
   handleSubmit(e) {
@@ -189,7 +189,18 @@ class LeaseCreate extends PureComponent {
 
 LeaseCreate.propTypes = {
   confirmNav: PropTypes.func,
-  editLandlord: PropTypes.func
+  editLandlord: PropTypes.func,
+  editAddress: PropTypes.func,
+  editCity: PropTypes.func,
+  editState: PropTypes.func,
+  editZip: PropTypes.func,
+  editTermEnd: PropTypes.func,
+  editRent: PropTypes.func,
+  editDeposit: PropTypes.func,
+  editMethod: PropTypes.func,
+  editPaymentMethod: PropTypes.func,
+  editPaymentAddress: PropTypes.func, 
+
 };
 
 export default withStyles(styles)(LeaseCreate);

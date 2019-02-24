@@ -15,9 +15,13 @@ const styles = (theme) => ({
     alignSelf: 'center',
     padding: 20,
     borderRadius: 4,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    textAlign: 'center',
+    boxShadow: '2px 5px 9px #888888',
+    // verticalAlign: 'middle',
   },
   cardContent: {
+
   },
   container: {
     width: 960,
@@ -90,7 +94,7 @@ class Dashboard extends PureComponent {
             id={'443arizona'}
           />
           <div className={classes.card} onClick={createNav}>
-            <div className={classes.cardContent}><input type='button' value='Create New Lease'></input></div>
+            <div className={classes.cardContent}>Create New Lease</div>
           </div>
 
         </div>

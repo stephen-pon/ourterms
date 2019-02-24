@@ -45,16 +45,18 @@ const styles = (theme) => ({
   }
 });
 
-class LeaseDetail extends PureComponent {
+class LeaseBreach extends PureComponent {
+
+  confirmAction() {
+    // insert name and email handling code here
+    alert('Notice of Breach has been sent to tenant.');
+    window.location.href = '/dashboard'; /* FIX THIS */
+  };
 
   render() {
     const {
       id,
-      classes,
-      amend,
-      schedule,
-      terminate
-
+      classes
     } = this.props;
 
     return (
@@ -62,14 +64,10 @@ class LeaseDetail extends PureComponent {
         <div className={classes.window + ' ' + classes.border}>
           <h1 className={classes.h1}>123 Main Street</h1>
           <hr className={classes.hr}></hr>
-          <h3>Tenant: Michael Johnson</h3>
-          <h3>Term: Month to Month</h3>
           <div className={classes.container + ' ' + classes.border}>
               <div className={classes.card}>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {amend}>Amend Lease</div>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {schedule}>Schedule inspection / repair</div>
-                <div className={classes.button} style={{backgroundColor: 'crimson'}} onClick= {terminate}>Terminate Lease</div>
-                <div className={classes.button} style={{backgroundColor: 'white'}}>Amend Lease</div>
+                <h3>Send Notice of Breach</h3>
+                <div className={classes.button} style={{backgroundColor: 'crimson'}} onClick={this.confirmAction}>Send Notice of Breach</div>
               </div>
           </div>
         </div>
@@ -78,12 +76,6 @@ class LeaseDetail extends PureComponent {
   }
 }
 
-LeaseDetail.propTypes = {
-  id: PropTypes.string,
-  amend: PropTypes.func,
-  schedule: PropTypes.func,
-  terminate: PropTypes.func
+LeaseBreach.propTypes = {};
 
-};
-
-export default withStyles(styles)(LeaseDetail);
+export default withStyles(styles)(LeaseBreach);

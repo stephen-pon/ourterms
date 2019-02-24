@@ -14,7 +14,8 @@ const styles = (theme) => ({
     alignSelf: 'center',
     padding: 20,
     borderRadius: 4,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    boxShadow: '2px 5px 9px #888888',
   },
   cardContent: {
   },

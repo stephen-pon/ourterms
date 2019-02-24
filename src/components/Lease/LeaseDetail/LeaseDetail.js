@@ -20,9 +20,10 @@ const styles = (theme) => ({
     padding: 8,
     // border: 'thin red solid',
     borderRadius: 4,
-    color: 'white',
-    backgroundColor: 'blue',
+    // color: 'white',
+    // backgroundColor: 'blue',
     fontWeight: 'bold',
+    boxShadow: '5px 10px 18px #888888'
   },
   container: {
     width: 960,
@@ -31,7 +32,7 @@ const styles = (theme) => ({
     margin: 'auto',
   },
   border: {
-    border: 'thin red solid',
+    // border: 'thin red solid',
   },
   window: {
     padding: '50px 100px 0 100px'
@@ -55,9 +56,9 @@ class LeaseDetail extends PureComponent {
           <h3>Term: Month to Month</h3>
           <div className={classes.container + ' ' + classes.border}>
               <div className={classes.card}>
-                <div className={classes.button}>Amend Lease</div>
-                <div className={classes.button}>Terminate Lease</div>
-                <div className={classes.button}>Schedule inspection / repair</div>
+                <div className={classes.button} style={{backgroundColor: 'lime'}}>Amend Lease</div>
+                <div className={classes.button} style={{backgroundColor: 'lime'}}>Schedule inspection / repair</div>
+                <div className={classes.button} style={{backgroundColor: 'crimson'}}>Terminate Lease</div>
               </div>
           </div>
         </div>

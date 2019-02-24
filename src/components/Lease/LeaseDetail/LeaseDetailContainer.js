@@ -1,26 +1,24 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import LeaseDetail from './LeaseDetail';
-import {push} from 'connected-react-router';
+import { push } from 'connected-react-router';
 
 
 
 const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.leaseId;
+  const lease = state.lease.leases[id];
 
   return {
-    id: ownProps.match.params.leaseId
+    id,
+    lease
   }
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-
-	amend: () => push('./:leaseId/amend'),
-
-	schedule: () => push('./:leaseId/access'),
-
-	terminate: () => push('./:leaseId/terminate'),
-
-
+  amend: (id) => push('/lease/' + id + '/amend'),
+  schedule: (id) => push('/lease/' + id + '/access'),
+  terminate: (id) => push('/lease/' + id + '/terminate'),
 }, dispatch);
 
 const LeaseDetailContainer = connect(mapStateToProps, mapDispatchToProps)(LeaseDetail);

@@ -4,8 +4,9 @@ import LeaseSign from './LeaseSign';
 
 
 const mapStateToProps = state => {
-  return {
 
+  return {
+    current_lease: state.lease.current_lease
   }
 };
 

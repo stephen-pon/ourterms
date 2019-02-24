@@ -23,6 +23,11 @@ const styles = (theme) => ({
 
 class Card extends PureComponent {
 
+  cardClicked(id) {
+    this.props.setCurrentLease(id);
+    this.props.leaseNav(id);
+  }
+
   render() {
     const {
       classes,
@@ -34,7 +39,7 @@ class Card extends PureComponent {
     } = this.props;
 
     return (
-      <div className={classes.card} onClick={leaseNav.bind(this, id)}>
+      <div className={classes.card} onClick={this.cardClicked.bind(this, id)}>
         <div>{address1}</div>
         <div>{address2}</div>
         <div>Tenant: {name}</div>
@@ -48,7 +53,8 @@ Card.propTypes = {
   address2: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
-  leaseNav: PropTypes.func
+  leaseNav: PropTypes.func,
+  setCurrentLease: PropTypes.func
 };
 
 export default withStyles(styles)(Card);

@@ -35,7 +35,7 @@ class LeaseCreate extends PureComponent {
 
   editLandlord(event) {
     const val = event.target.value;
-    console.log(val);
+    this.props.editLandlord(val);
   }
 
   editAddress(event) {
@@ -188,7 +188,8 @@ class LeaseCreate extends PureComponent {
 }
 
 LeaseCreate.propTypes = {
-  confirmNav: PropTypes.func
+  confirmNav: PropTypes.func,
+  editLandlord: PropTypes.func
 };
 
 export default withStyles(styles)(LeaseCreate);

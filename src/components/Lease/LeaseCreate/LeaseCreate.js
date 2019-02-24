@@ -13,9 +13,15 @@ const styles = (theme) => ({
 class LeaseCreate extends PureComponent {
 
   render() {
+  	const {
+      classes,
+      loginNav
+
+    } = this.props;
     return (
       <div>
-      <form>
+      	<h3>This is the where the Landlord create the lease</h3>
+      <form className ={classes.form}>
 	      <input type = 'text'> Landlord's name </input>
 	      <input type = 'text'> Address</input>
 	      <input type = 'text'> Term start</input>

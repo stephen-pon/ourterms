@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
+import * as emailjs from 'emailjs-com';
+
 
 
 const styles = (theme) => ({
@@ -36,11 +38,29 @@ const styles = (theme) => ({
   }
 });
 
+var template_params = {
+   "tenant_email": "stephen.g.pon@gmail.com",
+   "landlord_name": "Stephen Pon",
+   "landlord_email": "stephen.g.pon@gmail.com",
+   "tenant_name": "Sir Patrick Stewart",
+   "address": "123 Main Street, San Francisco, CA 12345"
+}
+
+var service_id = "sendgrid";
+var template_id = "schedule_inspection_for_repair";
+var user_id = "user_tdARssLzpl5W9N1I4lxwu";
+
 class LeaseAccess extends PureComponent {
 
   confirmAction() {
-    alert('An access scheduling notice was emailed to your tenant.');
-    window.location.href = '/lease/{id}'; /* FIX THIS */
+    emailjs.send(service_id, template_id, template_params, user_id)
+        .then(function(response) {
+           console.log('SUCCESS!', response.status, response.text);
+           alert('An access scheduling notice was emailed to your tenant.');
+           window.location.href = '/lease/{id}'; /* FIX THIS */
+        }, function(err) {
+           console.log('FAILED...', err);
+        });
   };
 
   render() {

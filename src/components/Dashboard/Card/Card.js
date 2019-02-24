@@ -14,6 +14,7 @@ const styles = (theme) => ({
     alignSelf: 'center',
     padding: 20,
     borderRadius: 4,
+    cursor: 'pointer'
   },
   cardContent: {
   },
@@ -26,14 +27,16 @@ class Card extends PureComponent {
       classes,
       address1,
       address2,
-      name
+      name,
+      id,
+      leaseNav
     } = this.props;
 
     return (
-      <div className={classes.card}>
-        <div className={classes.cardContent}>{address1}</div>
-        <div className={classes.cardContent}>{address2}</div>
-        <div className={classes.cardContent}>Tenant: {name}</div>
+      <div className={classes.card} onClick={leaseNav.bind(this, id)}>
+        <div>{address1}</div>
+        <div>{address2}</div>
+        <div>Tenant: {name}</div>
       </div>
     );
   }
@@ -41,8 +44,10 @@ class Card extends PureComponent {
 
 Card.propTypes = {
   address1: PropTypes.string,
-  address1: PropTypes.string,
-  name: PropTypes.string
+  address2: PropTypes.string,
+  name: PropTypes.string,
+  id: PropTypes.string,
+  leaseNav: PropTypes.func
 };
 
 export default withStyles(styles)(Card);

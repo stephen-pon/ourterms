@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
-import Card from './Card/Card';
+import CardContainer from './Card/CardContainer';
 
 
 const styles = (theme) => ({
@@ -15,6 +15,7 @@ const styles = (theme) => ({
     alignSelf: 'center',
     padding: 20,
     borderRadius: 4,
+    cursor: 'pointer'
   },
   cardContent: {
   },
@@ -37,7 +38,8 @@ class Dashboard extends PureComponent {
   render() {
 
     const {
-      classes
+      classes,
+      createNav
     } = this.props;
 
     return (
@@ -45,42 +47,49 @@ class Dashboard extends PureComponent {
         <h1>Welcome Stephen!</h1>
         <h3>Here are your leases:</h3>
         <div className={classes.container + ' ' + classes.border}>
-          <Card
+          <CardContainer
             address1={'123 Main St.'}
             address2={'San Francisco, CA 94103'}
             name={'Mike Johnson'}
+            id={'123main'}
           />
-          <Card
+          <CardContainer
             address1={'254 Beale St.'}
             address2={'San Francisco, CA 94103'}
             name={'Patrick Stewart'}
+            id={'254beale'}
           />
-          <Card
+          <CardContainer
             address1={'405 Howard St.'}
             address2={'San Francisco, CA 94103'}
             name={'Mr. Orrick'}
+            id={'405howard'}
           />
-          <Card
+          <CardContainer
             address1={'365 Year St.'}
             address2={'San Francisco, CA 94103'}
             name={'None'}
+            id={'365year'}
           />
-          <Card
+          <CardContainer
             address1={'1232 Mouser St.'}
             address2={'San Francisco, CA 94103'}
             name={'None'}
+            id={'1232mouser'}
           />
-          <Card
+          <CardContainer
             address1={'254 Beale St.'}
             address2={'San Francisco, CA 94103'}
             name={'John Stewart'}
+            id={'254beale'}
           />
-          <Card
+          <CardContainer
             address1={'443 Arizona St.'}
             address2={'San Francisco, CA 94103'}
             name={'Shirley Temple'}
+            id={'443arizona'}
           />
-          <div className={classes.card}>
+          <div className={classes.card} onClick={createNav}>
             <div className={classes.cardContent}><input type='button' value='Create New Lease'></input></div>
           </div>
 
@@ -90,6 +99,8 @@ class Dashboard extends PureComponent {
   }
 }
 
-Dashboard.propTypes = {};
+Dashboard.propTypes = {
+  createNav: PropTypes.func
+};
 
 export default withStyles(styles)(Dashboard);

@@ -8,31 +8,37 @@ const styles = (theme) => ({
     // width: 200,
     // height: 60,
     display: 'inline-block',
-    margin: 20,
+    margin: 0,
     // border: 'thin black solid',
-    alignSelf: 'center',
-    padding: 20,
+    // alignSelf: 'center',
+    padding: 0,
     borderRadius: 4,
   },
   button: {
     margin: 20,
     // width: 150,
     padding: 8,
-    // border: 'thin red solid',
+    border: 'thin black solid',
     borderRadius: 4,
     // color: 'white',
     // backgroundColor: 'blue',
     fontWeight: 'bold',
-    boxShadow: '5px 10px 18px #888888'
+    boxShadow: '2px 5px 9px #888888'
   },
   container: {
     width: 960,
     display: 'flex',
     flexWrap: 'wrap',
-    margin: 'auto',
+    // margin: 'auto',
   },
   border: {
     // border: 'thin red solid',
+  },
+  h1: {
+    margin: 0,
+  },
+  hr: {
+    margin: 0,
   },
   window: {
     padding: '50px 100px 0 100px'
@@ -50,14 +56,15 @@ class LeaseDetail extends PureComponent {
     return (
       <div>
         <div className={classes.window + ' ' + classes.border}>
-          <h1>123 Main Street</h1>
+          <h1 className={classes.h1}>123 Main Street</h1>
+          <hr className={classes.hr}></hr>
           <h1>Lease ID {id}</h1>
           <h3>Tenant: Michael Johnson</h3>
           <h3>Term: Month to Month</h3>
           <div className={classes.container + ' ' + classes.border}>
               <div className={classes.card}>
-                <div className={classes.button} style={{backgroundColor: 'lime'}}>Amend Lease</div>
-                <div className={classes.button} style={{backgroundColor: 'lime'}}>Schedule inspection / repair</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}}>Amend Lease</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}}>Schedule inspection / repair</div>
                 <div className={classes.button} style={{backgroundColor: 'crimson'}}>Terminate Lease</div>
               </div>
           </div>

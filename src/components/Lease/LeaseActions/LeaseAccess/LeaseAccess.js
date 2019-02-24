@@ -18,12 +18,12 @@ const styles = (theme) => ({
     margin: 20,
     // width: 150,
     padding: 8,
-    // border: 'thin red solid',
+    border: 'thin black solid',
     borderRadius: 4,
     // color: 'white',
     // backgroundColor: 'blue',
     fontWeight: 'bold',
-    boxShadow: '5px 10px 18px #888888'
+    boxShadow: '2px 5px 9px #888888'
   },
   container: {
     width: 960,
@@ -33,6 +33,12 @@ const styles = (theme) => ({
   },
   border: {
     // border: 'thin red solid',
+  },
+  h1: {
+    margin: 0,
+  },
+  hr: {
+    margin: 0,
   },
   window: {
     padding: '50px 100px 0 100px'
@@ -51,16 +57,17 @@ class LeaseAccess extends PureComponent {
     return (
       <div>
         <div className={classes.window + ' ' + classes.border}>
-          <h1 style={{margin: 0}}>123 Main Street</h1>
-          <hr style={{margin: 0}}></hr>
+          <h1 className={classes.h1}>123 Main Street</h1>
+          <hr className={classes.hr}></hr>
           <div className={classes.container + ' ' + classes.border}>
-
               <div className={classes.card}>
                 <h3>Schedule Access</h3>
                 <div>Select date of inspection or repair:</div><p></p>
                 <input style={{margin: 20}} type='date'></input>
-                <div className={classes.button} style={{backgroundColor: 'lime'}}>Schedule Inspection</div>
-                <div className={classes.button} style={{backgroundColor: 'crimson'}}>Schedule Repair</div>
+                <div>Select reason for access:</div><p></p>
+                <div className={classes.button} style={{backgroundColor: 'white'}}>Inspection</div>
+                <center>OR</center>
+                <div className={classes.button} style={{backgroundColor: 'white'}}>Repair</div>
               </div>
           </div>
         </div>

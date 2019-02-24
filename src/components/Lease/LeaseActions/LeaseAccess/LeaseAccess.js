@@ -47,6 +47,11 @@ const styles = (theme) => ({
 
 class LeaseAccess extends PureComponent {
 
+  confirmAccess() {
+    alert('An access scheduling notice was emailed to your tenant.');
+    window.location.href = '/lease/{id}'; /* FIX THIS */
+  };
+
   render() {
 
     const {
@@ -65,9 +70,9 @@ class LeaseAccess extends PureComponent {
                 <div>Select date of inspection or repair:</div><p></p>
                 <input style={{margin: 20}} type='date'></input>
                 <div>Select reason for access:</div><p></p>
-                <div className={classes.button} style={{backgroundColor: 'white'}}>Inspection</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAccess}>Inspection</div>
                 <center>OR</center>
-                <div className={classes.button} style={{backgroundColor: 'white'}}>Repair</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAccess}>Repair</div>
               </div>
           </div>
         </div>

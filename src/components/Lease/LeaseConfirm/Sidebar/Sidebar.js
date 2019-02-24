@@ -58,7 +58,10 @@ class Sidebar extends PureComponent {
 
   render() {
     const {
-      classes
+      classes,
+      addPets,
+      addSmoking,
+      addWaterbed
     } = this.props;
 
     return (
@@ -81,7 +84,7 @@ class Sidebar extends PureComponent {
               <input type='radio' name='pets'></input> Yes
             </span>
             <span className={classes.choice}>
-              <input type='radio' name='pets'></input> No
+              <input type='radio' name='pets' onClick={addPets}></input> No
             </span>
           </form>
           <ListItem>Smoking</ListItem>
@@ -90,7 +93,7 @@ class Sidebar extends PureComponent {
               <input type='radio' name='smoking'></input> Yes
             </span>
             <span className={classes.choice}>
-              <input type='radio' name='smoking'></input> No
+              <input type='radio' name='smoking' onClick={addSmoking}></input> No
             </span>
           </form>
           <ListItem>Waterbeds</ListItem>
@@ -99,7 +102,7 @@ class Sidebar extends PureComponent {
               <input type='radio' name='waterbeds'></input> Yes
             </span>
             <span className={classes.choice}>
-              <input type='radio' name='waterbeds'></input> No
+              <input type='radio' name='waterbeds' onClick={addWaterbed}></input> No
             </span>
           </form>
         </List>
@@ -113,7 +116,10 @@ class Sidebar extends PureComponent {
 
 Sidebar.propTypes = {
   saveHit: PropTypes.func,
-  saveLease: PropTypes.func
+  saveLease: PropTypes.func,
+  addPets: PropTypes.func,
+  addSmoking: PropTypes.func,
+  addWaterbed: PropTypes.func
 };
 
 export default withStyles(styles)(Sidebar);

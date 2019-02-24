@@ -70,6 +70,9 @@ const initialState = {
   payment_method: '',
   payment_address: '',
 
+  pet_clause: false,
+  smoking_clause: false,
+  waterbed_clause: false
 };
 
 export const leaseReducer = (currentState = initialState, action) => {
@@ -196,6 +199,27 @@ export const leaseReducer = (currentState = initialState, action) => {
             signed: true
           }
         }
+      }
+      break;
+
+    case leaseConstants.ADD_PETS:
+      update = {
+        ...currentState,
+        pet_clause: true
+      }
+      break;
+
+    case leaseConstants.ADD_SMOKING:
+      update = {
+        ...currentState,
+        smoking_clause: true
+      }
+      break;
+
+    case leaseConstants.ADD_WATERBED:
+      update = {
+        ...currentState,
+        waterbed_clause: true
       }
       break;
 

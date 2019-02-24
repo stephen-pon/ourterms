@@ -3,7 +3,12 @@ import { bindActionCreators } from 'redux';
 import { push } from 'connected-react-router';
 
 import Sidebar from './Sidebar';
-import { saveLease } from '../../../../actions';
+import {
+  saveLease,
+  addPets,
+  addSmoking,
+  addWaterbed
+} from '../../../../actions';
 
 
 const mapStateToProps = state => {
@@ -14,7 +19,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   saveHit: () => push('/dashboard'),
-  saveLease: () => saveLease()
+  saveLease: () => saveLease(),
+  addPets: () => addPets(),
+  addSmoking: () => addSmoking(),
+  addWaterbed: () => addWaterbed()
 }, dispatch);
 
 const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(Sidebar);

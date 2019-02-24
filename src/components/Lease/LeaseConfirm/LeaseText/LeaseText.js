@@ -31,11 +31,18 @@ const styles = (theme) => ({
 
 class LeaseText extends PureComponent {
 
+  componentDidUpdate(update) {
+    this.textPage.scrollIntoView({ behavior: "smooth" })
+  }
+
   render() {
     const {
       classes,
       name,
-      address
+      address,
+      pet_clause,
+      smoking_clause,
+      waterbed_clause
     } = this.props;
 
     return (
@@ -77,18 +84,30 @@ class LeaseText extends PureComponent {
             </Tooltip>
           </span>
 
+          {
+            pet_clause ?
+              <span className={classes.newClause}>
+                <b>Pets.</b> Small animals (under 25 pounds) may be kept on the Premises without Landlord's prior written consent.
+               </span>
+              : ''
+          }
 
-          <span className={classes.newClause}>
-            <b>Pets.</b> Small animals (under 25 pounds) may be kept on the Premises without Landlord's prior written consent.
-          </span>
+          {
+            waterbed_clause ?
+              <span className={classes.newClause}>
+                <b>Waterbeds.</b> No waterbed or other item of water-filled furniture will be kept on the premises without Landlord's written consent.
+              </span>
+              : ''
+          }
 
-          <span className={classes.newClause}>
-            <b>Waterbeds.</b> No waterbed or other item of water-filled furniture will be kept on the premises without Landlord's written consent.
-          </span>
-
-          <span className={classes.newClause}>
-            <b>Smoking.</b> Tenant shall not and shall not permit anyone else to smoke tobacco or marijuana products or use any e-cigarette, e-cigar, e-pipe, e-hookah, or vape pen at the Premises.
-          </span>
+          {
+            smoking_clause ?
+              <span className={classes.newClause}>
+                <b>Smoking.</b> Tenant shall not and shall not permit anyone else to smoke tobacco or marijuana products or use any e-cigarette, e-cigar, e-pipe, e-hookah, or vape pen at the Premises.
+              </span>
+              : ''
+          }
+          <div ref={(el) => { this.textPage = el; }}></div>
         </div >
       </div >
     );
@@ -97,7 +116,10 @@ class LeaseText extends PureComponent {
 
 LeaseText.propTypes = {
   name: PropTypes.string,
-  address: PropTypes.string
+  address: PropTypes.string,
+  pet_clause: PropTypes.bool,
+  smoking_clause: PropTypes.bool,
+  waterbed_clause: PropTypes.bool
 };
 
 export default withStyles(styles)(LeaseText);

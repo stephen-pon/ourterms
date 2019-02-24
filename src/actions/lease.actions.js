@@ -87,3 +87,15 @@ export const signLease = (id) => ({
 	type: leaseConstants.SIGN_LEASE,
 	id
 })
+
+export const addPets = () => ({
+	type: leaseConstants.ADD_PETS
+})
+
+export const addSmoking = () => ({
+	type: leaseConstants.ADD_SMOKING
+})
+
+export const addWaterbed = () => ({
+	type: leaseConstants.ADD_WATERBED
+})

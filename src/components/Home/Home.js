@@ -57,7 +57,7 @@ const styles = theme => ({
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
-    borderRadius:'15px', 
+    borderRadius:'15px',
     textStyle: 'bold',
   }
 
@@ -69,9 +69,6 @@ const styles = theme => ({
 
 class Home extends PureComponent {
 
-  componentDidMount() {
-    this.props.loginNav();
-  }
 
   render() {
     const {
@@ -85,7 +82,7 @@ class Home extends PureComponent {
         <header>
         <img src={logo} alt="Logo" className={classes.logo} />
         <h2 className={classes.tagline}>Providing a legal solution without the cost of a lawyer </h2>
-        {/* we will build out the navbar laterzz 
+        {/* we will build out the navbar laterzz
         <ul className={classes.navbar}>
           <li className={classes.li}>About</li>
           <li className={classes.li}>Products</li>

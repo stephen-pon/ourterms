@@ -53,6 +53,7 @@ class Dashboard extends PureComponent {
                 address2={lease.address2}
                 name={lease.name}
                 id={lease.id}
+                key={lease.id}
               />
             })
           }
@@ -68,7 +69,7 @@ class Dashboard extends PureComponent {
 
 Dashboard.propTypes = {
   createNav: PropTypes.func,
-  leases: PropTypes.array
+  leases: PropTypes.object
 };
 
 export default withStyles(styles)(Dashboard);

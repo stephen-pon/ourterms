@@ -5,51 +5,58 @@ import { leaseConstants } from "../constants";
 const initialState = {
   current_lease: undefined,
   lease_signed: false,
-  leases: [
-    {
+  leases: {
+    '123main': {
       address1: '123 Main St.',
       address2: 'San Francisco, CA 94103',
       name: 'Mike Johnson',
-      id: '123main'
+      id: '123main',
+      term: 'Month to Month'
     },
-    {
+    '254beale': {
       address1: '254 Beale St.',
       address2: 'San Francisco, CA 94103',
       name: 'Patrick Stewart',
-      id: '254beale'
+      id: '254beale',
+      term: 'Month to Month'
     },
-    {
+    '405howard': {
       address1: '405 Howard St.',
       address2: 'San Francisco, CA 94103',
       name: 'Mr. Orrick',
-      id: '405howard'
+      id: '405howard',
+      term: '12 Month'
     },
-    {
+    '365year': {
       address1: '365 Year St.',
       address2: 'San Francisco, CA 94103',
       name: 'None',
-      id: '365year'
+      id: '365year',
+      term: 'None'
     },
 
-    {
+    '1232mouser': {
       address1: '1232 Mouser St.',
       address2: 'San Francisco, CA 94103',
       name: 'None',
-      id: '1232mouser'
+      id: '1232mouser',
+      term: 'None'
     },
-    {
-      address1: '254 Beale St.',
+    '333beale': {
+      address1: '333 Beale St.',
       address2: 'San Francisco, CA 94103',
       name: 'John Stewart',
-      id: '254beale'
+      id: '333beale',
+      term: 'Month to Month'
     },
-    {
+    '443arizona': {
       address1: '443 Arizona St.',
       address2: 'San Francisco, CA 94103',
       name: 'Shirley Temple',
-      id: '443arizona'
+      id: '443arizona',
+      term: 'Month to Month'
     }
-  ],
+  },
 
   landlord: '',
   address: '',
@@ -76,29 +83,29 @@ export const leaseReducer = (currentState = initialState, action) => {
         ...currentState,
         landlord: action.val
       }
-    break;
+      break;
 
     case leaseConstants.EDIT_ADDRESS:
       update = {
         ...currentState,
         address: action.val
       }
-    break;
+      break;
 
     case leaseConstants.EDIT_CITY:
       update = {
-        ... currentState,
+        ...currentState,
         city: action.val
       }
-    break;
+      break;
 
 
     case leaseConstants.EDIT_STATE:
       update = {
-        ... currentState,
+        ...currentState,
         state: action.val
       }
-    break;
+      break;
 
 
     case leaseConstants.EDIT_ZIP:
@@ -106,7 +113,7 @@ export const leaseReducer = (currentState = initialState, action) => {
         ...currentState,
         zip: action.val
       }
-    break;
+      break;
 
     case leaseConstants.EDIT_TERM_END:
       update = {
@@ -142,13 +149,21 @@ export const leaseReducer = (currentState = initialState, action) => {
         ...currentState,
         payment_method: action.val
       }
-      break; 
+      break;
 
     case leaseConstants.EDIT_PAYMENT_ADDRESS:
       update = {
         ...currentState,
         payment_address: action.val
       }
+      break;
+
+    case leaseConstants.SET_CURRENT_LEASE:
+      update = {
+        ...currentState,
+        current_lease: action.id
+      }
+      break;
 
     default: break;
   }

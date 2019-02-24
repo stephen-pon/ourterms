@@ -5,23 +5,16 @@ import { withStyles } from '@material-ui/core';
 
 const styles = (theme) => ({
   card: {
-    // width: 200,
-    // height: 60,
     display: 'inline-block',
     margin: 0,
-    // border: 'thin black solid',
-    // alignSelf: 'center',
     padding: 0,
     borderRadius: 4,
   },
   button: {
     margin: 20,
-    // width: 150,
     padding: 8,
     border: 'thin black solid',
     borderRadius: 4,
-    // color: 'white',
-    // backgroundColor: 'blue',
     fontWeight: 'bold',
     boxShadow: '2px 5px 9px #888888'
   },
@@ -29,10 +22,8 @@ const styles = (theme) => ({
     width: 960,
     display: 'flex',
     flexWrap: 'wrap',
-    // margin: 'auto',
   },
   border: {
-    // border: 'thin red solid',
   },
   h1: {
     margin: 0,
@@ -53,23 +44,23 @@ class LeaseDetail extends PureComponent {
       classes,
       amend,
       schedule,
-      terminate
-
+      terminate,
+      lease
     } = this.props;
 
     return (
       <div>
         <div className={classes.window + ' ' + classes.border}>
-          <h1 className={classes.h1}>123 Main Street</h1>
+          <h1 className={classes.h1}>{lease.address1} {lease.address2}</h1>
           <hr className={classes.hr}></hr>
-          <h3>Tenant: Michael Johnson</h3>
-          <h3>Term: Month to Month</h3>
+          <h3>Tenant: {lease.name}</h3>
+          <h3>Term: {lease.term}</h3>
           <div className={classes.container + ' ' + classes.border}>
-              <div className={classes.card}>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {amend}>Amend Lease</div>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {schedule}>Schedule inspection / repair</div>
-                <div className={classes.button} style={{backgroundColor: 'crimson'}} onClick= {terminate}>Terminate Lease</div>
-              </div>
+            <div className={classes.card}>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={amend.bind(this, id)}>Amend Lease</div>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={schedule.bind(this, id)}>Schedule inspection / repair</div>
+              <div className={classes.button} style={{ backgroundColor: 'crimson' }} onClick={terminate.bind(this, id)}>Terminate Lease</div>
+            </div>
           </div>
         </div>
       </div>
@@ -81,8 +72,8 @@ LeaseDetail.propTypes = {
   id: PropTypes.string,
   amend: PropTypes.func,
   schedule: PropTypes.func,
-  terminate: PropTypes.func
-
+  terminate: PropTypes.func,
+  lease: PropTypes.object
 };
 
 export default withStyles(styles)(LeaseDetail);

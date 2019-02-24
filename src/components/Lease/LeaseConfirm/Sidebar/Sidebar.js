@@ -52,6 +52,7 @@ const styles = (theme) => ({
 class Sidebar extends PureComponent {
 
   save() {
+    this.props.saveLease();
     this.props.saveHit();
   }
 
@@ -111,7 +112,8 @@ class Sidebar extends PureComponent {
 }
 
 Sidebar.propTypes = {
-  saveHit: PropTypes.func
+  saveHit: PropTypes.func,
+  saveLease: PropTypes.func
 };
 
 export default withStyles(styles)(Sidebar);

@@ -34,7 +34,6 @@ const initialState = {
       id: '365year',
       term: 'None'
     },
-
     '1232mouser': {
       address1: '1232 Mouser St.',
       address2: 'San Francisco, CA 94103',
@@ -63,14 +62,13 @@ const initialState = {
   city: '',
   state: '',
   zip: '',
+  term_start: '',
   term_end: '',
   rent: '',
   deposit: '',
   method: '',
   payment_method: '',
   payment_address: '',
-
-
 
 };
 
@@ -112,6 +110,13 @@ export const leaseReducer = (currentState = initialState, action) => {
       update = {
         ...currentState,
         zip: action.val
+      }
+      break;
+
+    case leaseConstants.EDIT_TERM_START:
+      update = {
+        ...currentState,
+        term_start: action.val
       }
       break;
 
@@ -162,6 +167,23 @@ export const leaseReducer = (currentState = initialState, action) => {
       update = {
         ...currentState,
         current_lease: action.id
+      }
+      break;
+    case leaseConstants.SAVE_LEASE:
+      const id = currentState.address.replace(/\s/g, '').slice(0, -3);
+
+      update = {
+        ...currentState,
+        leases: {
+          ...currentState.leases,
+          id: {
+            address1: currentState.address,
+            address2: currentState.city + ', ' + currentState.state + ' ' + currentState.zip,
+            name: 'None',
+            id: id,
+            term: 'None'
+          }
+        }
       }
       break;
 

@@ -194,12 +194,13 @@ LeaseCreate.propTypes = {
   editCity: PropTypes.func,
   editState: PropTypes.func,
   editZip: PropTypes.func,
+  editTermStart: PropTypes.func,
   editTermEnd: PropTypes.func,
   editRent: PropTypes.func,
   editDeposit: PropTypes.func,
   editMethod: PropTypes.func,
   editPaymentMethod: PropTypes.func,
-  editPaymentAddress: PropTypes.func, 
+  editPaymentAddress: PropTypes.func,
 
 };
 

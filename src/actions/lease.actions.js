@@ -31,6 +31,13 @@ export const editZip = (val) => ({
 
 })
 
+export const editTermStart = (val) => ({
+	type: leaseConstants.EDIT_TERM_START,
+	val
+
+})
+
+
 export const editTermEnd = (val) => ({
 	type: leaseConstants.EDIT_TERM_END,
 	val
@@ -70,4 +77,8 @@ export const editPaymentAddress = (val) => ({
 export const setCurrentLease = (id) => ({
 	type: leaseConstants.SET_CURRENT_LEASE,
 	id
+})
+
+export const saveLease = () => ({
+	type: leaseConstants.SAVE_LEASE
 })

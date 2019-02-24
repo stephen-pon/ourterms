@@ -9,6 +9,7 @@ import {
   editCity,
   editState,
   editZip,
+  editTermStart,
   editTermEnd,
   editRent,
   editDeposit,
@@ -31,10 +32,11 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   editCity: (val) => editCity(val),
   editState: (val) => editState(val),
   editZip: (val) => editZip(val),
+  editTermStart: (val) => editTermStart(val),
   editTermEnd: (val) => editTermEnd(val),
   editRent: (val) => editRent(val),
   editDeposit: (val) => editDeposit(val),
-  editMethod: (val) =>editMethod(val),
+  editMethod: (val) => editMethod(val),
   editPaymentMethod: (val) => editPaymentMethod(val),
   editPaymentAddress: (val) => editPaymentAddress(val)
 }, dispatch);

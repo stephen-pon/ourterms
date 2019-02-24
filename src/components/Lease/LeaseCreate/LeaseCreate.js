@@ -170,7 +170,7 @@ class LeaseCreate extends PureComponent {
             <input type='text' onChange={this.editPaymentAddress.bind(this)} />
             <label className={classes.label}>
             </label>
-            <button> Submit</button>
+            <button style={{ fontWeight: 'bold' }}> Submit</button>
 
           </form>
 

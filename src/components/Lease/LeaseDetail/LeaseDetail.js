@@ -50,7 +50,11 @@ class LeaseDetail extends PureComponent {
   render() {
     const {
       id,
-      classes
+      classes,
+      amend,
+      schedule,
+      terminate
+
     } = this.props;
 
     return (
@@ -62,10 +66,9 @@ class LeaseDetail extends PureComponent {
           <h3>Term: Month to Month</h3>
           <div className={classes.container + ' ' + classes.border}>
               <div className={classes.card}>
-                <div className={classes.button} style={{backgroundColor: 'white'}}>Amend Lease</div>
-                <div className={classes.button} style={{backgroundColor: 'white'}}>Schedule inspection / repair</div>
-                <div className={classes.button} style={{backgroundColor: 'crimson'}}>Send Notice of Breach</div>
-                <div className={classes.button} style={{backgroundColor: 'white', color: 'lightgrey'}}>Terminate Lease</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {amend}>Amend Lease</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}} onClick= {schedule}>Schedule inspection / repair</div>
+                <div className={classes.button} style={{backgroundColor: 'crimson'}} onClick= {terminate}>Terminate Lease</div>
               </div>
           </div>
         </div>
@@ -75,7 +78,11 @@ class LeaseDetail extends PureComponent {
 }
 
 LeaseDetail.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
+  amend: PropTypes.func,
+  schedule: PropTypes.func,
+  terminate: PropTypes.func
+
 };
 
 export default withStyles(styles)(LeaseDetail);

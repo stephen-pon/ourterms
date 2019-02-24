@@ -70,7 +70,7 @@ class LeaseAccess extends PureComponent {
                 <div>Select date of inspection or repair:</div><p></p>
                 <input style={{margin: 20}} type='date'></input>
                 <div>Select reason for access:</div><p></p>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAccess}>Inspection</div>
+                <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAction}>Inspection</div>
                 <center>OR</center>
                 <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAction}>Repair</div>
               </div>

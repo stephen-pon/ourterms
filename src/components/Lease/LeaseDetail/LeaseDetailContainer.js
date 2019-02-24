@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   schedule: (id) => push('/lease/' + id + '/access'),
   terminate: (id) => push('/lease/' + id + '/terminate'),
   sign: (id) => push('/lease/' + id + '/sign'),
+  payment: (id) => push('/lease/' + id + '/payment'),
   dashNav: () => push('/dashboard')
 }, dispatch);
 

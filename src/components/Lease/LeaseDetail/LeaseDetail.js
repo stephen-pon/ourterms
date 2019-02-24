@@ -52,7 +52,8 @@ class LeaseDetail extends PureComponent {
       terminate,
       lease,
       sign,
-      dashNav
+      dashNav,
+      payment,
     } = this.props;
 
     return (
@@ -82,6 +83,7 @@ class LeaseDetail extends PureComponent {
                 <div className={classes.card}>
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={amend.bind(this, id)}>Amend Lease</div>
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={schedule.bind(this, id)}>Schedule inspection / repair</div>
+                  <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={payment.bind(this, id)}>Request Payment from Tenant</div>
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={terminate.bind(this, id)}>Breach of lease</div>
                 </div>
               </div>
@@ -99,7 +101,8 @@ LeaseDetail.propTypes = {
   terminate: PropTypes.func,
   sign: PropTypes.func,
   lease: PropTypes.object,
-  dashNav: PropTypes.func
+  dashNav: PropTypes.func,
+  payment: PropTypes.func,
 };
 
 export default withStyles(styles)(LeaseDetail);

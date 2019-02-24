@@ -180,8 +180,8 @@ export const leaseReducer = (currentState = initialState, action) => {
         leases: {
           ...currentState.leases,
           id: {
-            address1: currentState.address,
-            address2: currentState.city + ', ' + currentState.state + ' ' + currentState.zip,
+            address1: '1800 Flowers St.',
+            address2: 'San Francisco, CA 94103',
             name: 'None',
             id: id,
             term: 'None'

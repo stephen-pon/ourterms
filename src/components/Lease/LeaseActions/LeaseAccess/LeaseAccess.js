@@ -39,11 +39,11 @@ const styles = (theme) => ({
 });
 
 var template_params = {
-   "tenant_email": "stephen.g.pon@gmail.com",
-   "landlord_name": "Stephen Pon",
-   "landlord_email": "stephen.g.pon@gmail.com",
-   "tenant_name": "Sir Patrick Stewart",
-   "address": "123 Main Street, San Francisco, CA 12345"
+  "tenant_email": "stephen.g.pon@gmail.com",
+  "landlord_name": "Stephen Pon",
+  "landlord_email": "sponis1@gmail.com",
+  "tenant_name": "Sir Patrick Stewart",
+  "address": "123 Main Street, San Francisco, CA 12345"
 }
 
 var service_id = "sendgrid";
@@ -53,14 +53,17 @@ var user_id = "user_tdARssLzpl5W9N1I4lxwu";
 class LeaseAccess extends PureComponent {
 
   confirmAction() {
+    const that = this;
     emailjs.send(service_id, template_id, template_params, user_id)
-        .then(function(response) {
-           console.log('SUCCESS!', response.status, response.text);
-           alert('An access scheduling notice was emailed to your tenant.');
-           window.location.href = '/lease/{id}'; /* FIX THIS */
-        }, function(err) {
-           console.log('FAILED...', err);
-        });
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+
+        const r = window.confirm('An access scheduling notice was emailed to your tenant.'); if (r === true) {
+          that.props.detailNav(that.props.current_lease);
+        }
+      }, function (err) {
+        console.log('FAILED...', err);
+      });
   };
 
   render() {
@@ -81,9 +84,9 @@ class LeaseAccess extends PureComponent {
               <div>Select date of inspection or repair:</div><p></p>
               <input style={{ margin: 20 }} type='date'></input>
               <div>Select reason for access:</div><p></p>
-              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction}>Inspection</div>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction.bind(this)}>Inspection</div>
               <center>OR</center>
-              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction}>Repair</div>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction.bind(this)}>Repair</div>
             </div>
           </div>
         </div>
@@ -92,6 +95,9 @@ class LeaseAccess extends PureComponent {
   }
 }
 
-LeaseAccess.propTypes = {};
+LeaseAccess.propTypes = {
+  current_lease: PropTypes.string,
+  detailNav: PropTypes.func
+};
 
 export default withStyles(styles)(LeaseAccess);

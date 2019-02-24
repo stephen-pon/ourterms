@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core";
 import logo from '../../assets/logo.jpeg';
 
 const styles = theme => ({
-  logo:{
+  logo: {
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -17,17 +17,17 @@ const styles = theme => ({
     fontSize: '25px',
   },
 
-  navbar:{
+  navbar: {
     align: 'center',
     margin: '0',
     padding: '1%',
     listStyleType: 'none',
     display: 'inline',
-    backgroundColor:'gray',
+    backgroundColor: 'gray',
 
   },
 
-  li:{
+  li: {
     display: 'inline',
     float: 'left',
     padding: '1%'
@@ -35,29 +35,29 @@ const styles = theme => ({
 
   main: {
     margin: '30px',
-    padding:'5px',
+    padding: '5px',
   },
 
-  quotes:{
+  quotes: {
     margin: '35px',
-    padding:'10px',
+    padding: '10px',
     textAlign: 'center',
     fontSize: '18px',
   },
 
-  quoteAttr:{
+  quoteAttr: {
     float: 'right',
     paddingRight: '15px',
     marginRight: '40px',
   },
 
-  button:{
-    color:'#65B68E',
-    fontSize:'1.2em',
+  button: {
+    color: '#65B68E',
+    fontSize: '1.2em',
     display: 'block',
     marginLeft: 'auto',
     marginRight: 'auto',
-    borderRadius:'15px',
+    borderRadius: '15px',
     textStyle: 'bold',
   }
 
@@ -80,24 +80,15 @@ class Home extends PureComponent {
     return (
       <div>
         <header>
-        <img src={logo} alt="Logo" className={classes.logo} />
-        <h2 className={classes.tagline}>Providing a legal solution without the cost of a lawyer </h2>
-        {/* we will build out the navbar laterzz
-        <ul className={classes.navbar}>
-          <li className={classes.li}>About</li>
-          <li className={classes.li}>Products</li>
-          <li className={classes.li}>Contact</li>
-          <li className={classes.li}>Testimonials</li>
-          <li className={classes.li}>Help</li>
-          </ul>
-          */}
-          </header>
+          <img src={logo} alt="Logo" className={classes.logo} />
+          <h2 className={classes.tagline}>Providing a legal solution without the cost of a lawyer </h2>
+        </header>
         <main>
           <h3 className={classes.quotes}>
+            <img></img>
+            This is what we do. We are cool. Love us. Give us money.
           <img></img>
-          This is what we do. We are cool. Love us. Give us money.
-          <img></img>
-           </h3>
+          </h3>
           <button className={classes.button} onClick={loginNav}> <b>Login</b></button>
 
 
@@ -108,7 +99,7 @@ class Home extends PureComponent {
 }
 
 Home.propTypes = {
-  loginNav:PropTypes.func
+  loginNav: PropTypes.func
 };
 
 export default withStyles(styles)(Home);

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import { Redirect, Route, Switch } from "react-router-dom";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import store, { history } from "./store/store";
 import HomeContainer from "./components/Home/HomeContainer";
@@ -16,14 +17,16 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <Switch>
-            <Route path="/home" component={HomeContainer} />
-            <Route path='/login' component={LoginContainer} />
-            <Route path='/dashboard' component={DashboardContainer} />
-            <Route path='/create' component={CreateContainer} />
-            <Route path='/lease' component={LeaseContainer} />
-            <Redirect exact={true} from="/" to="/home" />
-          </Switch>
+          <CssBaseline>
+            <Switch>
+              <Route path="/home" component={HomeContainer} />
+              <Route path='/login' component={LoginContainer} />
+              <Route path='/dashboard' component={DashboardContainer} />
+              <Route path='/create' component={CreateContainer} />
+              <Route path='/lease' component={LeaseContainer} />
+              <Redirect exact={true} from="/" to="/home" />
+            </Switch>
+          </CssBaseline>
         </ConnectedRouter>
       </Provider>
     );

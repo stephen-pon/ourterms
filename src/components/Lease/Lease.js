@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import LeaseDetailContainer from './LeaseDetail/LeaseDetailContainer';
 import LeaseCreateContainer from './LeaseCreate/LeaseCreateContainer';
+import LeaseConfirmContainer from './LeaseConfirm/LeaseConfirmContainer';
 import LeaseSignContainer from './LeaseActions/LeaseSign/LeaseSignContainer';
 import LeaseAmendContainer from './LeaseActions/LeaseAmend/LeaseAmendContainer';
 import LeaseTerminateContainer from './LeaseActions/LeaseTerminate/LeaseTerminateContainer';
@@ -22,6 +23,7 @@ class Lease extends PureComponent {
     return (
       <Switch>
         <Route path='/lease/create' component={LeaseCreateContainer} />
+        <Route path='/lease/confirm' component={LeaseConfirmContainer} />
         <Route path='/lease/:leaseId/sign' component={LeaseSignContainer} />
         <Route path='/lease/:leaseId/amend' component={LeaseAmendContainer} />
         <Route path='/lease/:leaseId/terminate' component={LeaseTerminateContainer} />

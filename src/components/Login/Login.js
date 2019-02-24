@@ -32,7 +32,7 @@ class Login extends PureComponent {
       <div>
         <center>
           <div className={classes.box}>
-            <img src={logo}></img>
+            <img src={logo} alt='logo'></img>
             <h1>Login to OurTerms</h1>
             <div className={classes.box}>
               <form id="login">

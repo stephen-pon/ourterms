@@ -46,7 +46,7 @@ var template_params = {
 }
 
 var service_id = "sendgrid";
-var template_id = "schedule_inspection_for_repair";
+var template_id = "request_payment_for_repair";
 var user_id = "user_tdARssLzpl5W9N1I4lxwu";
 
 class LeasePayment extends PureComponent {
@@ -56,7 +56,7 @@ class LeasePayment extends PureComponent {
         .then(function(response) {
            console.log('SUCCESS!', response.status, response.text);
            alert('An access scheduling notice was emailed to your tenant.');
-           window.location.href = '/lease/{id}'; /* FIX THIS */
+           // window.location.href = '/lease/{id}'; /* FIX THIS */
         }, function(err) {
            console.log('FAILED...', err);
         });
@@ -76,13 +76,11 @@ class LeasePayment extends PureComponent {
           <hr className={classes.hr}></hr>
           <div className={classes.container + ' ' + classes.border}>
             <div className={classes.card}>
-              <h3>Schedule Access</h3>
-              <div>Select date of inspection or repair:</div><p></p>
-              <input style={{ margin: 20 }} type='date'></input>
-              <div>Select reason for access:</div><p></p>
-              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction}>Inspection</div>
-              <center>OR</center>
-              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction}>Repair</div>
+              <h3>Request Payment for Repair</h3>
+              <div>Enter the amount of payment required:</div><p></p>
+              $<input style={{ margin: 20 }} type='number' step='0.01'></input>
+              <div>Send request for payment:</div><p></p>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction}>Request Payment</div>
             </div>
           </div>
         </div>

@@ -93,6 +93,11 @@ class LeaseCreate extends PureComponent {
     console.log(val);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.confirmNav();
+  }
+
 
   render() {
     const {
@@ -107,7 +112,7 @@ class LeaseCreate extends PureComponent {
 
 
         <div className={classes.divForm} >
-          <form className={classes.form}>
+          <form className={classes.form} onSubmit={this.handleSubmit.bind(this)}>
 
             <label className={classes.label}>
               Landlord's name
@@ -182,6 +187,8 @@ class LeaseCreate extends PureComponent {
   }
 }
 
-LeaseCreate.propTypes = {};
+LeaseCreate.propTypes = {
+  confirmNav: PropTypes.func
+};
 
 export default withStyles(styles)(LeaseCreate);

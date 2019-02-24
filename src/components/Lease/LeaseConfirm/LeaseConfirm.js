@@ -6,10 +6,7 @@ import SidebarContainer from './Sidebar/SidebarContainer';
 
 
 const styles = (theme) => ({
-  page: {
-    display: 'flex',
-    flexDirection: 'row'
-  }
+
 });
 
 class LeaseConfirm extends PureComponent {
@@ -20,7 +17,7 @@ class LeaseConfirm extends PureComponent {
     } = this.props;
 
     return (
-      <div className={classes.page}>
+      <div>
         <SidebarContainer />
       </div>
     );

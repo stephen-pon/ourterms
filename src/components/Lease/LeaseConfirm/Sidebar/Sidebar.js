@@ -81,10 +81,10 @@ class Sidebar extends PureComponent {
           <ListItem>Pets</ListItem>
           <form className={classes.choiceGroup}>
             <span className={classes.choice}>
-              <input type='radio' name='pets'></input> Yes
+              <input type='radio' name='pets' onClick={addPets}></input> Yes
             </span>
             <span className={classes.choice}>
-              <input type='radio' name='pets' onClick={addPets}></input> No
+              <input type='radio' name='pets'></input> No
             </span>
           </form>
           <ListItem>Smoking</ListItem>

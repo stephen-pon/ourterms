@@ -57,8 +57,8 @@ const initialState = {
     }
   },
 
-  landlord: '',
-  address: '',
+  landlord: 'Stephen Pon',
+  address: '1800 Flowers St.',
   city: '',
   state: '',
   zip: '',

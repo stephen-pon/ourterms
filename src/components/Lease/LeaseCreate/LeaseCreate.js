@@ -117,37 +117,37 @@ class LeaseCreate extends PureComponent {
             <label className={classes.label}>
               Landlord's name
             </label>
-            <input type='text' onChange={this.editLandlord.bind(this)} />
+            <input type='text' value='Stephen Pon' onChange={this.editLandlord.bind(this)} />
 
             <label className={classes.label}>
               Address
             </label>
-            <input type='text' onChange={this.editAddress.bind(this)} />
+            <input type='text' value='1800 Flowers St.' onChange={this.editAddress.bind(this)} />
 
             <label className={classes.label}>
               City
           </label>
-            <input type='text' onChange={this.editCity.bind(this)} />
+            <input type='text' value='San Francisco' onChange={this.editCity.bind(this)} />
 
             <label className={classes.label}>
               State
           </label>
-            <input type='text' onChange={this.editState.bind(this)} />
+            <input type='text' value='CA' onChange={this.editState.bind(this)} />
 
             <label className={classes.label}>
               Zip
           </label>
-            <input type='text' onChange={this.editZip.bind(this)} />
+            <input type='text' value='94103' onChange={this.editZip.bind(this)} />
 
             <label className={classes.label}>
               Term start
           </label>
-            <input type='date' onChange={this.editTermStart.bind(this)} />
+            <input type='date' value='2019-03-01' onChange={this.editTermStart.bind(this)} />
 
             <label className={classes.label}>
               Term end
           </label>
-            <input type='date' onChange={this.editTermEnd.bind(this)} />
+            <input type='date' value='2020-03-01' onChange={this.editTermEnd.bind(this)} />
 
             <label className={classes.label}>
               Monthly rent
@@ -172,7 +172,7 @@ class LeaseCreate extends PureComponent {
             <label className={classes.label}>
               Payment address
           </label>
-            <input type='text' onChange={this.editPaymentAddress.bind(this)} />
+            <input type='text' value='1875 Mission St.' onChange={this.editPaymentAddress.bind(this)} />
             <label className={classes.label}>
             </label>
             <button style={{ fontWeight: 'bold' }}> Submit</button>

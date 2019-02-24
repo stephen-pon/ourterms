@@ -6,8 +6,9 @@ import Dashboard from './Dashboard';
 
 
 const mapStateToProps = state => {
-  return {
 
+  return {
+    leases: state.lease.leases
   }
 };
 

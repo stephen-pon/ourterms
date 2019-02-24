@@ -33,23 +33,25 @@ class LeaseText extends PureComponent {
 
   render() {
     const {
-      classes
+      classes,
+      name,
+      address
     } = this.props;
 
     return (
       <div className={classes.content}>
         <div className={classes.textArea}>
           <span className={classes.clause}>
-            <b>Parties.</b> This Agreement is made and entered into on February 24, 2019, between _______ (Landlord) and _______ (Tenant).
+            <b>Parties.</b> This Agreement is made and entered into on ________, between {name} (Landlord) and _______ (Tenant).
           </span>
           <span className={classes.clause}>
-            <b>Premises.</b> Landlord rents to Tenant, and Tenant rent from Landlord, for residential purposes only, the premises at 123 Main St., San Francisco, California(Premises).
+            <b>Premises.</b> Landlord rents to Tenant, and Tenant rent from Landlord, for residential purposes only, the premises at {address}(Premises).
           </span>
           <span className={classes.clause}>
             <b>Term.</b> The term begins on March 1, 2019, and the term (and this Agreement) expire on March 1, 2020. If Tenant vacates before expiration, Tenant is liable for the rent for the remainder of the term, less rent Landlord could collect from a replacement.
           </span>
           <span className={classes.clause}>
-            <b>Rent.</b> Tenant will pay Landlord monthly rent of $3,000.00 on the 1st day of each month. Payment will be made by sending [check/cryptocurrency] to [address/wallet].  Tenant will pay Landlord a deposit of $3,000.00 by sending [check/cryptocurrency] to [address/wallet].
+            <b>Rent.</b> Tenant will pay Landlord monthly rent of $3,000.00 on the 1st day of each month. Payment will be made by sending check to 1875 Mission Street.  Tenant will pay Landlord a deposit of $3,000.00 by sending check to 1875 Mission Street.
           </span>
           <span className={classes.clause}>
             <b>Deposit.</b> Within three weeks after Tenant has vacated the premises, in accordance with Cal. Civ. Code ß 1950.5, <Tooltip title="OurTerms operative provision" placement="right"><span className={classes.highlight}>Landlord will deliver Tenant an itemized written statement of the reasons for, and the dollar amount of, any of the security deposit retained by the Landlord</span></Tooltip> and will return any security deposit balance.
@@ -93,6 +95,9 @@ class LeaseText extends PureComponent {
   }
 }
 
-LeaseText.propTypes = {};
+LeaseText.propTypes = {
+  name: PropTypes.string,
+  address: PropTypes.string
+};
 
 export default withStyles(styles)(LeaseText);

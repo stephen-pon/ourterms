@@ -90,7 +90,7 @@ class LeaseCreate extends PureComponent {
           <input type = 'text'/> 
           <label className={classes.label}>
           </label>
-          <button> Submit</button>
+          <button style={{fontWeight: 'bold'}}> Submit</button>
 
           </form>
 

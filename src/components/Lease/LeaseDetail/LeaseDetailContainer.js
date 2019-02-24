@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import LeaseDetail from './LeaseDetail';
+import {push} from 'connected-react-router';
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,6 +13,13 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+
+	amend: () => push('./:leaseId/amend'),
+
+	schedule: () => push('./:leaseId/access'),
+
+	terminate: () => push('./:leaseId/terminate'),
+
 
 }, dispatch);
 

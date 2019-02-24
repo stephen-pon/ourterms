@@ -49,14 +49,106 @@ const initialState = {
       name: 'Shirley Temple',
       id: '443arizona'
     }
-  ]
+  ],
+
+  landlord: '',
+  address: '',
+  city: '',
+  state: '',
+  zip: '',
+  term_end: '',
+  rent: '',
+  deposit: '',
+  method: '',
+  payment_method: '',
+  payment_address: '',
+
+
+
 };
 
 export const leaseReducer = (currentState = initialState, action) => {
   let update = {};
 
   switch (action.type) {
+    case leaseConstants.EDIT_LANDLORD:
+      update = {
+        ...currentState,
+        landlord: action.val
+      }
+    break;
 
+    case leaseConstants.EDIT_ADDRESS:
+      update = {
+        ...currentState,
+        address: action.val
+      }
+    break;
+
+    case leaseConstants.EDIT_CITY:
+      update = {
+        ... currentState,
+        city: action.val
+      }
+    break;
+
+
+    case leaseConstants.EDIT_STATE:
+      update = {
+        ... currentState,
+        state: action.val
+      }
+    break;
+
+
+    case leaseConstants.EDIT_ZIP:
+      update = {
+        ...currentState,
+        zip: action.val
+      }
+    break;
+
+    case leaseConstants.EDIT_TERM_END:
+      update = {
+        ...currentState,
+        term_end: action.val
+      }
+      break;
+
+    case leaseConstants.EDIT_RENT:
+      update = {
+        ...currentState,
+        rent: action.val
+      }
+      break;
+
+
+    case leaseConstants.EDIT_DEPOSIT:
+      update = {
+        ...currentState,
+        deposit: action.val
+      }
+      break;
+
+    case leaseConstants.EDIT_METHOD:
+      update = {
+        ...currentState,
+        method: action.val
+      }
+      break;
+
+    case leaseConstants.EDIT_PAYMENT_METHOD:
+      update = {
+        ...currentState,
+        payment_method: action.val
+      }
+      break; 
+
+    case leaseConstants.EDIT_PAYMENT_ADDRESS:
+      update = {
+        ...currentState,
+        payment_address: action.val
+      }
 
     default: break;
   }

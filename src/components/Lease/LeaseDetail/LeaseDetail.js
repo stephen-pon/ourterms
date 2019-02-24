@@ -58,7 +58,6 @@ class LeaseDetail extends PureComponent {
         <div className={classes.window + ' ' + classes.border}>
           <h1 className={classes.h1}>123 Main Street</h1>
           <hr className={classes.hr}></hr>
-          <h1>Lease ID {id}</h1>
           <h3>Tenant: Michael Johnson</h3>
           <h3>Term: Month to Month</h3>
           <div className={classes.container + ' ' + classes.border}>

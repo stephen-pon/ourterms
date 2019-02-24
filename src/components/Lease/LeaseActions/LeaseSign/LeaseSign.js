@@ -48,9 +48,10 @@ const styles = (theme) => ({
 class LeaseSign extends PureComponent {
 
   confirmAction() {
-    // insert name and email handling code here
-    alert('Lease has been emailed to you and your tenant for signature.');
-    window.location.href = '/lease/' + this.props.current_lease;
+    const r = window.confirm('Lease has been emailed to you and your tenant for signature.'); if (r == true) {
+      this.props.signLease(this.props.current_lease);
+      this.props.detailNav(this.props.current_lease);
+    }
   };
 
   render() {
@@ -81,7 +82,9 @@ class LeaseSign extends PureComponent {
 }
 
 LeaseSign.propTypes = {
-  current_lease: PropTypes.string
+  current_lease: PropTypes.string,
+  signLease: PropTypes.func,
+  detailNav: PropTypes.func
 };
 
 export default withStyles(styles)(LeaseSign);

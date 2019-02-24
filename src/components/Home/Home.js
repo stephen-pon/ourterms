@@ -81,14 +81,14 @@ class Home extends PureComponent {
       <div>
         <header>
           <img src={logo} alt="Logo" className={classes.logo} />
-          <h2 className={classes.tagline}>Providing a legal solution without the cost of a lawyer </h2>
+          <h2 className={classes.tagline}>Bringing contracts to life </h2>
         </header>
         <main>
-          <h3 className={classes.quotes}>
+          {/* <h3 className={classes.quotes}>
             <img></img>
             This is what we do. We are cool. Love us. Give us money.
           <img></img>
-          </h3>
+          </h3> */}
           <button className={classes.button} onClick={loginNav}> <b>Login</b></button>
 
 

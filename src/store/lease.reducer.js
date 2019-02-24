@@ -186,6 +186,18 @@ export const leaseReducer = (currentState = initialState, action) => {
         }
       }
       break;
+    case leaseConstants.SIGN_LEASE:
+      update = {
+        ...currentState,
+        leases: {
+          ...currentState.leases,
+          [action.id]: {
+            ...currentState.leases[action.id],
+            signed: true
+          }
+        }
+      }
+      break;
 
     default: break;
   }

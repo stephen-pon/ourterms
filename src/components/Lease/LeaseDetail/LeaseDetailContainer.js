@@ -19,6 +19,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   amend: (id) => push('/lease/' + id + '/amend'),
   schedule: (id) => push('/lease/' + id + '/access'),
   terminate: (id) => push('/lease/' + id + '/terminate'),
+  sign: (id) => push('/lease/' + id + '/sign'),
+  dashNav: () => push('/dashboard')
 }, dispatch);
 
 const LeaseDetailContainer = connect(mapStateToProps, mapDispatchToProps)(LeaseDetail);

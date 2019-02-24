@@ -82,3 +82,8 @@ export const setCurrentLease = (id) => ({
 export const saveLease = () => ({
 	type: leaseConstants.SAVE_LEASE
 })
+
+export const signLease = (id) => ({
+	type: leaseConstants.SIGN_LEASE,
+	id
+})

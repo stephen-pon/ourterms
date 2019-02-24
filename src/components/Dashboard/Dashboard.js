@@ -2,11 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 
+import Card from './Card/Card';
+
 
 const styles = (theme) => ({
   card: {
     width: 200,
-    height: 60,
+    height: 90,
     display: 'inline-block',
     margin: 20,
     border: 'thin black solid',
@@ -43,49 +45,44 @@ class Dashboard extends PureComponent {
         <h1>Welcome Stephen!</h1>
         <h3>Here are your leases:</h3>
         <div className={classes.container + ' ' + classes.border}>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>123 Main Street</div>
-              <div className={classes.cardContent}>San Francisco, CA 90210</div>
-              <div className={classes.cardContent}>Mike Johnson</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}>Address</div>
-              <div className={classes.cardContent}>Tenant Name</div>
-              <div className={classes.cardContent}>Caption goes here</div>
-            </div>
-            <div className={classes.card}>
-              <div className={classes.cardContent}><input type='button' value='Create New Lease'></input></div>
-            </div>
+          <Card
+            address1={'123 Main St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'Mike Johnson'}
+          />
+          <Card
+            address1={'254 Beale St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'Patrick Stewart'}
+          />
+          <Card
+            address1={'405 Howard St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'Mr. Orrick'}
+          />
+          <Card
+            address1={'365 Year St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'None'}
+          />
+          <Card
+            address1={'1232 Mouser St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'None'}
+          />
+          <Card
+            address1={'254 Beale St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'John Stewart'}
+          />
+          <Card
+            address1={'443 Arizona St.'}
+            address2={'San Francisco, CA 94103'}
+            name={'Shirley Temple'}
+          />
+          <div className={classes.card}>
+            <div className={classes.cardContent}><input type='button' value='Create New Lease'></input></div>
+          </div>
 
         </div>
       </div>

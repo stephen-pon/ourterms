@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core';
 
 
 const styles = (theme) => ({
+	form:{
+		textAlign: 'center',
+	}
 
 });
 
@@ -12,6 +15,18 @@ class LeaseCreate extends PureComponent {
   render() {
     return (
       <div>
+      <form>
+	      <input type = 'text'> Landlord's name </input>
+	      <input type = 'text'> Address</input>
+	      <input type = 'text'> Term start</input>
+	      <input type = 'text'> Term end </input>
+	      <input type = 'text'> Monthly rent</input>
+	      <input type = 'text'> Security deposit</input>
+	      <input type = 'text'> Payment method </input>
+	      <input type = 'text'> Address</input>
+	      <input type="submit" value="Submit"></input>
+
+      </form>
         <h1>This is the create new lease form/flow page</h1>
       </div>
     );

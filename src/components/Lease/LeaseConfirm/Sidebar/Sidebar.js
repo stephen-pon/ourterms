@@ -38,10 +38,22 @@ const styles = (theme) => ({
   },
   radioButton: {
 
+  },
+  button: {
+    width: 50
+  },
+  buttonArea: {
+    paddingTop: 10,
+    display: 'flex',
+    justifyContent: 'space-around'
   }
 });
 
 class Sidebar extends PureComponent {
+
+  save() {
+    this.props.saveHit();
+  }
 
   render() {
     const {
@@ -90,11 +102,16 @@ class Sidebar extends PureComponent {
             </span>
           </form>
         </List>
+        <span className={classes.buttonArea}>
+          <button className={classes.button} onClick={this.save.bind(this)}>Save</button>
+        </span>
       </Drawer>
     );
   }
 }
 
-Sidebar.propTypes = {};
+Sidebar.propTypes = {
+  saveHit: PropTypes.func
+};
 
 export default withStyles(styles)(Sidebar);

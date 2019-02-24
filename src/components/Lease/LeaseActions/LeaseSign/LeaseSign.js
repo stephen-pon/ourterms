@@ -50,7 +50,7 @@ class LeaseSign extends PureComponent {
   confirmAction() {
     // insert name and email handling code here
     alert('Lease has been emailed to you and your tenant for signature.');
-    window.location.href = '/dashboard'; /* FIX THIS */
+    window.location.href = '/lease/' + this.props.current_lease;
   };
 
   render() {
@@ -66,13 +66,13 @@ class LeaseSign extends PureComponent {
           <h1 className={classes.h1}>123 Main Street</h1>
           <hr className={classes.hr}></hr>
           <div className={classes.container + ' ' + classes.border}>
-              <div className={classes.card}>
-                <h3>Create a new lease</h3>
-                <div>Enter tenant's name and email:</div><p></p>
-                Name <input style={{margin: 20}} type='text' required></input><br></br>
-                Email <input style={{margin: 20}} type='email' required></input>
-                <div className={classes.button} style={{backgroundColor: 'white'}} onClick={this.confirmAction}>Email contract for signature</div>
-              </div>
+            <div className={classes.card}>
+              <h3>Create a new lease</h3>
+              <div>Enter tenant's name and email:</div><p></p>
+              Name <input style={{ margin: 20 }} type='text' required></input><br></br>
+              Email <input style={{ margin: 20 }} type='email' required></input>
+              <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={this.confirmAction.bind(this)}>Email contract for signature</div>
+            </div>
           </div>
         </div>
       </div>
@@ -80,6 +80,8 @@ class LeaseSign extends PureComponent {
   }
 }
 
-LeaseSign.propTypes = {};
+LeaseSign.propTypes = {
+  current_lease: PropTypes.string
+};
 
 export default withStyles(styles)(LeaseSign);

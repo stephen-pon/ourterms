@@ -84,7 +84,7 @@ class LeaseDetail extends PureComponent {
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={amend.bind(this, id)}>Amend Lease</div>
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={schedule.bind(this, id)}>Schedule inspection / repair</div>
                   <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={payment.bind(this, id)}>Request Payment from Tenant</div>
-                  <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={terminate.bind(this, id)}>Breach of lease</div>
+                  <div className={classes.button} style={{ backgroundColor: 'white' }} onClick={terminate.bind(this, id)}>Notify breach of lease</div>
                 </div>
               </div>
           }

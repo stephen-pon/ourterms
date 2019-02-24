@@ -4,36 +4,99 @@ import { withStyles } from '@material-ui/core';
 
 
 const styles = (theme) => ({
-	form:{
-		textAlign: 'center',
-	}
+  header:{
+    textAlign: 'center',
+    paddingBottom: '2%',
+  },
 
+  divForm:{
+    height: '50%',
+    margin: '0',
+    },
+
+	form:{
+		padding: '0 40% 0 40%',
+    verticalAlign: 'middle',
+    height: '100%',
+    margin:'auto',
+    display: 'flex',
+    flexDirection: 'column',
+	},
+
+  label:{
+    padding: '5px',
+
+  }
+
+  
 });
 
 class LeaseCreate extends PureComponent {
 
+
   render() {
   	const {
-      classes,
-      loginNav
-
+      classes
     } = this.props;
+
     return (
       <div>
-      	<h3>This is the where the Landlord create the lease</h3>
-      <form className ={classes.form}>
-	      <input type = 'text'> Landlord's name </input>
-	      <input type = 'text'> Address</input>
-	      <input type = 'text'> Term start</input>
-	      <input type = 'text'> Term end </input>
-	      <input type = 'text'> Monthly rent</input>
-	      <input type = 'text'> Security deposit</input>
-	      <input type = 'text'> Payment method </input>
-	      <input type = 'text'> Address</input>
-	      <input type="submit" value="Submit"></input>
+        <header className={classes.header}>
+        <h1>Create  a new lease form </h1>
+        </header>
 
-      </form>
-        <h1>This is the create new lease form/flow page</h1>
+
+      <div className={classes.divForm} >
+      <form className={classes.form}>
+
+          <label className={classes.label}>
+            Landlord's name
+          </label>
+  	      <input type = 'text'/> 
+          
+          <label className={classes.label}>
+            Address
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Term start
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Term end 
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Monthly rent 
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Security deposit
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Payment method  
+          </label>
+          <input type = 'text'/> 
+
+          <label className={classes.label}>
+            Payment method
+          </label>
+          <input type = 'text'/> 
+          <label className={classes.label}>
+          </label>
+          <button> Submit</button>
+
+          </form>
+
+        </div>
+          
+
       </div>
     );
   }

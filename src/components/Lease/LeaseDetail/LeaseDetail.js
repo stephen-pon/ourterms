@@ -65,7 +65,8 @@ class LeaseDetail extends PureComponent {
               <div className={classes.card}>
                 <div className={classes.button} style={{backgroundColor: 'white'}}>Amend Lease</div>
                 <div className={classes.button} style={{backgroundColor: 'white'}}>Schedule inspection / repair</div>
-                <div className={classes.button} style={{backgroundColor: 'crimson'}}>Terminate Lease</div>
+                <div className={classes.button} style={{backgroundColor: 'crimson'}}>Send Notice of Breach</div>
+                <div className={classes.button} style={{backgroundColor: 'white', color: 'lightgrey'}}>Terminate Lease</div>
               </div>
           </div>
         </div>
